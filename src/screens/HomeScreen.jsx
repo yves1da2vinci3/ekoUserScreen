@@ -8,38 +8,32 @@ import FeedBack from '../Layout/FeedBack'
 import  {useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import dns from '../utils/dns'
-
+import { useState } from 'react'
+import { SpinnerCircular } from 'spinners-react'
 
 // import NavAtom from '../recoil/Atoms/NavAtom'
 function HomeScreen() { 
-//   const NavState = useRecoilValue(NavAtom)
-//   useEffect(() =>{
-//     const FecthUserProfile = async  () => { 
-//       const token =  localStorage.getItem("UserToken")
-//       try {
-//         const {data} = await axios.get(` ${dns}/api/users/profile`,{
-//           headers: {
-//             'Content-Type': 'application/json',
-//             Authorization: `Bearer ${token}`,
-//           },
-//         })
-//         setUser(data)
-//         if(data){
-//           if(data.isAdmin){
-//             return  navigate("/admin/request")
-//           }
-//           if(!data.isAdmin){
-//             return  navigate("/user/")
-//           }
-//         }
-      
-//       } catch (error) {
-//         console.log(error)
-//       }
-//   }
-//   FecthUserProfile()
-// }
-//   ,[])
+  
+  const [Fields,setFields] = useState([])
+  const [loading,SetLoading] = useState(true);
+  useEffect(() => {
+  
+    SetLoading(true)
+   const FetchFields = async () => {
+    try {
+      const {data} = await axios.get(` ${dns}/api/fields`,{
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      setFields(data)
+      SetLoading(false)
+    } catch (error) {
+      console.log(error)
+    }
+   }
+   FetchFields()
+    },[])
   const navigate = useNavigate()
 
   const moveToResidences = () => { 
@@ -109,11 +103,10 @@ function HomeScreen() {
     <h1 className='mb-6 text-3xl md:text-5xl lg:text-6xl leading-tight font-bold tracking-tight text-center capitalize'> Voici quelques uns de nos<span className='text-blue-500 font-bold'> terrains</span>  </h1>
 
 <div className='flex flex-wrap px-4 relative gap-3 md:justify-center'>
-<Residence />
-<Residence />
-<Residence />
-<Residence />
-<Residence />
+{ loading ? <div className="flex h-screen justify-center items-center  w-screen" > <SpinnerCircular speed={100} size={50} color="blue" /></div> : (   Fields.map(field => (
+              <Residence key={field._id}  field={field} />
+            )))}
+
 </div>
 
 <div  onClick={moveToResidences} className="w-72 self-center mt-8  p-4 cursor-pointer">
@@ -121,7 +114,7 @@ function HomeScreen() {
                 className="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-blue-50 font-medium text-center bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 border border-blue-500 rounded-md shadow-sm"
   
               >
-              voir plus
+              Continuer
               </p>
             </div>
     </div>
