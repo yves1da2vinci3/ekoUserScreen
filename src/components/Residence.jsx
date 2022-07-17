@@ -3,9 +3,14 @@ import {MdOutlineBedroomParent,MdOutlineGroups} from 'react-icons/md'
 import {GiPapers} from 'react-icons/gi'
 import image2 from "../public/images/image2.jpeg"
 import {GiMoneyStack} from 'react-icons/gi'
+import { Link } from 'react-router-dom'
 function Residence({field}) {
+  const fieldId = field._id
+
+  const fieldLink ="/field/"+ fieldId
   return (
-<div className='bg-gray-100 w-96 h-[30rem] rounded drop-shadow-lg p-2 cursor-pointer transform hover:-translate-y-4 hover:transition duration-300' >
+<Link  to={fieldLink}
+ className='bg-gray-100 w-96 h-[30rem] rounded drop-shadow-lg p-2 cursor-pointer transform hover:-translate-y-4 hover:transition duration-300' >
   {/* image et location */}
 <div className='w-full relative'>
   {/* image */}
@@ -29,7 +34,7 @@ function Residence({field}) {
 
 </div>
 
-</div>
+</Link>
   )
 }
 
