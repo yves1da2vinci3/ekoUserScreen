@@ -50,7 +50,7 @@ function HomeScreen() {
  
     <Header />
     {/* a propos de nous */}
-    <div className='md:h-screen  h-auto flex flex-col   md:grid md:grid-cols-2'>
+    <div className='md:h-auto  min-h-screen flex flex-col   md:grid md:grid-cols-2'>
       <div className='bg-white hidden  h-full md:flex items-center justify-center relative'>
    <div className='h-4/6 w-2/3 rounded-r-[4rem] bg-blue-100 shadow-md absolute left-0 top-4 '>
       {/* fond blue */}
@@ -65,41 +65,12 @@ function HomeScreen() {
 <h1 className='text-blue-700 font-semibold text-[2rem]'>A propos de nous</h1>
 <p className='mb-6 text-3xl md:text-5xl lg:text-6xl leading-tight font-bold tracking-tight' >Nous sommes ce que vous recherchez en matiere de <span className='text-blue-500 font-bold'> vente de terrains</span> dans la ville d'abidjan et en dehors.</p>
 
-{/* <p className='mb-8 text-xl leading-8  tracking-tight md:text-2xl text-gray-500 font-medium '>  We’re different. Flex is the only saas business platform that lets you
-            run your business on one platform, seamlessly across all digital
-            channels.
-            We’re different. Flex is the only saas business platform that lets you
-            run your business on one platform, seamlessly across all digital
-            channels.
-            We’re different. Flex is the only saas business platform that lets you
-            run your business on one platform, seamlessly across all digital
-            channels.
-          </p> */}
-
-          {/* <div className=' flex flex-wrap '>
-          <div className="w-full md:w-auto py-1 md:py-0 md:mr-4 cursor-pointer">
-              <a
-                className="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-blue-50 font-medium text-center bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 border border-blue-500 rounded-md shadow-sm"
-                href="#"
-              >
-       plus d'infos
-              </a>
-            </div>
-            <div className="w-full md:w-auto py-1 md:py-0">
-              <a
-                className="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-blue-300 font-medium text-center bg-white hover:bg-coolGray-100 focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50 border border-blue-200 rounded-md shadow-sm"
-                href="#"
-              >
-          nous contacter
-              </a>
-            </div>
-          </div> */}
 </div>
     </div>
 
 
     {/* les maisons */}
-    <div className='h-auto mt-4 flex flex-col md:justify-center '> 
+    <div className='min-h-screen mt-4 flex flex-col md:justify-center '> 
     <h1 className='mb-6 text-3xl md:text-5xl lg:text-6xl leading-tight font-bold tracking-tight text-center capitalize'> Voici quelques uns de nos<span className='text-blue-500 font-bold'> terrains</span>  </h1>
 
 <div className='flex flex-wrap px-4 relative gap-3 md:justify-center'>
