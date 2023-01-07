@@ -157,10 +157,10 @@ function FieldScreen() {
        <div className="mb-10 pb-10 border-b">
          <div className='flex gap-x-2 items-center'>
          <MdLocationPin size={36} color="red" />
-         <span className="text-gray-500 text-lg">RIA 1 /RIA2</span>
+         <span className="text-gray-500 text-lg">{Field.Localisation}</span>
          </div>
          <h2 className="mt-2 mb-6 max-w-xl text-5xl md:text-6xl font-bold font-heading tracking-tighter">
-       Environs du quartier chateau Bonoua
+      {Field.MoreInfoLocalisation}
          </h2>
          <p className="inline-block mb-8 text-2xl font-bold font-heading text-blue-500">
            <span>   500m2</span> 

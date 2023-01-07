@@ -14,7 +14,7 @@ function Residence({field}) {
   {/* image et location */}
 <div className='w-full relative'>
   {/* image */}
-<img src={field.imageUrls[0].FileLink} className='h-72 rounded-lg ' />
+<img src={field.imageUrls[0].FileLink} className='h-72 w-full rounded-lg ' />
 {/* location */}
 
 </div>
